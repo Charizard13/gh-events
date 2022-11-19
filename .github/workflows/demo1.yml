@@ -4,6 +4,14 @@ on:
     types: 
     - opened
   workflow_dispatch:
+  push:
+    branches:
+    - main #main is the default branch name
+    - 'dev/*' # dev branch and all sub branches
+    - 'feature/**' # feature branch like feature/feature1 or feature/feature2
+    paths-ignore:
+    - 'README.md'
+    - '.env'
 jobs:
   deploy:
     runs-on: ubuntu-latest
